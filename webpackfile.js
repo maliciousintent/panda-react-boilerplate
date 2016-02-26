@@ -33,14 +33,14 @@ module.exports = {
     }),
   ],
   module: {
-    // preLoaders: [
-    //   {
-    //     test: /\.js$/,
-    //     include: [ __dirname ],
-    //     exclude: [ __dirname + '/node_modules' ],
-    //     loader: 'eslint-loader',
-    //   },
-    // ],
+    preLoaders: [
+      {
+        test: /\.js$/,
+        include: [ __dirname ],
+        exclude: [ __dirname + '/node_modules' ],
+        loader: 'eslint-loader',
+      },
+    ],
     loaders: [
       {
         test: /\.js$/,
