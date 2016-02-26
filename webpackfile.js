@@ -1,7 +1,6 @@
 
 var webpack = require('webpack');
 
-
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://panda.dev:' + process.env.PORT + '/',

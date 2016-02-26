@@ -1,11 +1,10 @@
 
-import React from 'react';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
-
+import { Route, Router, browserHistory } from 'react-router';
+import { combineReducers, createStore } from 'redux';
+import { routerReducer, syncHistoryWithStore } from 'react-router-redux';
 import App from './App';
+import { Provider } from 'react-redux';
+import React from 'react';
 
 
 const reducers = combineReducers({
@@ -15,11 +14,14 @@ const reducers = combineReducers({
 const store = createStore(reducers);
 const history = syncHistoryWithStore(browserHistory, store);
 
-export default () => (
+const AppRouter = () => (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
+      <Route component={App} path="/">
+        {/* routes here */}
       </Route>
     </Router>
   </Provider>
 );
+
+export default AppRouter;
